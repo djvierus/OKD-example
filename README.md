@@ -26,11 +26,23 @@ To run through this walkthrough, a Linux workstation, or at the very least, Wind
 ## Download the Release Client
 Go to the [OKD SCOS Github Project releases page](https://github.com/okd-project/okd-scos/releases) and download the latest\stable tagged release's client tools. Current Linux Client download is "https://github.com/okd-project/okd-scos/releases/download/4.16.0-okd-scos.1/openshift-client-linux-4.16.0-okd-scos.1.tar.gz".
 
-Untar the client and make it executable with the following commands:
+Rename, Untar the client, and make it executable with the following commands:
+
+Rename the package:
+```mv openshift-client-linux-<version>.tar.gz oc.tar.gz```
+
+Untar the file:
 ```tar zxf oc.tar.gz```
+
+Make it executatble:
 ```chmod +x oc```
 
 You can verify it works with the ```oc version``` command. If Linux cannot find the file, you may need to re-run the command with the ```./oc version``` command to let Linux know the command is in the current directory you are in.
+
+You can make the client available to all users on the system without needing to be in the directory the client is in by moving it the the ```/usr/bin``` directore
+```
+sudo mv ./oc /usr/bin/
+```
 
 ## Download the Release Installer
 On the same releases page, download the client installer. Current Linux Client downlaod is 
