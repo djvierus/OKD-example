@@ -28,14 +28,14 @@ Go to the [OKD SCOS Github Project releases page](https://github.com/okd-project
 
 Rename, Untar the client, and make it executable with the following commands:
 
-Rename the package:
-```mv openshift-client-linux-<version>.tar.gz oc.tar.gz```
+Rename the package:  
+```mv openshift-client-linux-<version>.tar.gz oc.tar.gz```  
 
-Untar the file:
-```tar zxf oc.tar.gz```
+Untar the file:  
+```tar zxf oc.tar.gz```  
 
-Make it executatble:
-```chmod +x oc```
+Make it executable:  
+```chmod +x oc```  
 
 You can verify it works with the ```oc version``` command. If Linux cannot find the file, you may need to re-run the command with the ```./oc version``` command to let Linux know the command is in the current directory you are in.
 
@@ -48,9 +48,13 @@ sudo mv ./oc /usr/bin/
 On the same releases page, download the client installer. Current Linux Client downlaod is 
 "https://github.com/okd-project/okd-scos/releases/download/4.16.0-okd-scos.1/openshift-install-linux-4.16.0-okd-scos.1.tar.gz".
 
-Untar and make it executable like the client tool:
-```tar zxvf openshift-install-linux.tar.gz```
-```chmod +x openshift-install```
+Untar and make it executable like the client tool:  
+Rename the release installer:  
+```mv openshift-install-linux<version>.tar.gz openshift-install-linux.tar.gz```  
+Untar the package:  
+```tar zxvf openshift-install-linux.tar.gz```  
+Make the package executable:    
+```chmod +x openshift-install```  
 
 ## Download the base ISO
 This is where the documentation really breaks for OKD's walkthrough. The previous 4.16.0-okd.scos.0 release did not download the correct Centos Based ISO. That is an issue being addressed [here](https://github.com/okd-project/okd-scos/issues/11).
