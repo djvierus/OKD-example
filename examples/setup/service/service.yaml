@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: haproxy-service
+  namespace: haproxy
+spec:
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ipFamilies:
+  - IPv4
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: 8443
+  selector:
+    app: haproxy
+  sessionAffinity: None
+  type: ClusterIP
